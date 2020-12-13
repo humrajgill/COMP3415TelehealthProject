@@ -4,8 +4,8 @@ From the Project Description:
 
 Project 3: Telemedicine system for remote residents:
 
-There are many remote residents around Thunder Bay, who have difficulty getting
-medication from the Thunder Bay Regional Hospital. The hospital needs a system to take
+There are many remote residents who have difficulty getting
+medication from Regional Hospitals. The hospital needs a system to take
 care of these remote residents.
 - A remote resident can register this system and upload her/his health information.
 - The system can automatically upload real time health information obtained from
