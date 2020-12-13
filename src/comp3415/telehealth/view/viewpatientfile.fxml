@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comp3415.telehealth.ViewPatientFileController">
     <children>
@@ -12,7 +22,8 @@
                 <Insets />
             </opaqueInsets>
             <items>
-                <Button fx:id="backButton" mnemonicParsing="false" onAction="#redirectToDashboard" text="Back" />
+                <Button fx:id="backButton" mnemonicParsing="false" onAction="#backToSearch" text="Back" />
+            <Label fx:id="bottomLabel" text="Status Messages here" />
             </items>
         </ToolBar>
 
@@ -21,16 +32,22 @@
             <content>
                 <AnchorPane fx:id="contentPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="256.0" text="Please enter the information below:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="20.0" layoutY="42.0" prefHeight="17.0" prefWidth="95.0" text="Patient ID:" textAlignment="RIGHT" />
-                        <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="72.0" prefHeight="17.0" prefWidth="101.0" text="Doctor ID:" />
-                        <Label alignment="CENTER_RIGHT" layoutX="11.0" layoutY="105.0" prefHeight="17.0" prefWidth="105.0" text="Conditions:" />
-                        <TextField fx:id="nameField" editable="false" layoutX="121.0" layoutY="38.0" text="Patient ID here" />
-                        <TextField fx:id="usernameField" editable="false" layoutX="121.0" layoutY="68.0" text="Doctor ID here" />
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="256.0" text="Your information is given below:" />
+                        <Label fx:id="patientIdLabel" alignment="CENTER_RIGHT" layoutX="20.0" layoutY="42.0" prefHeight="17.0" prefWidth="95.0" text="Patient ID:" textAlignment="RIGHT" />
+                        <Label fx:id="doctorIdLabel" alignment="CENTER_RIGHT" layoutX="14.0" layoutY="72.0" prefHeight="17.0" prefWidth="101.0" text="Doctor ID:" />
+                        <Label alignment="CENTER_RIGHT" layoutX="11.0" layoutY="105.0" prefHeight="17.0" prefWidth="105.0" text="Medical Info:" />
+                        <TextField fx:id="patientIdField" editable="false" layoutX="121.0" layoutY="38.0" text="Patient ID here" />
+                        <TextField fx:id="doctorIdField" editable="false" layoutX="121.0" layoutY="68.0" text="Doctor ID here" />
                         <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="168.0" prefHeight="17.0" prefWidth="84.0" text="Medications:" />
-                        <Button fx:id="submitButton" layoutX="284.0" layoutY="225.0" mnemonicParsing="false" text="Edit" />
-                  <TextArea editable="false" layoutX="121.0" layoutY="102.0" prefHeight="58.0" prefWidth="200.0" text="patient.condition here" />
-                  <TextArea editable="false" layoutX="121.0" layoutY="168.0" prefHeight="25.0" prefWidth="200.0" text="patient.medications here" />
+                  <TextArea fx:id="medicalInfoText" editable="false" layoutX="121.0" layoutY="102.0" prefHeight="58.0" prefWidth="200.0" text="patient.condition here" />
+                  <TextArea fx:id="medicationText" editable="false" layoutX="121.0" layoutY="168.0" prefHeight="25.0" prefWidth="200.0" text="patient.medications here" />
+                  <CheckBox fx:id="verifiedCheckbox" layoutX="121.0" layoutY="219.0" mnemonicParsing="false" text="Verified " />
+                  <Button fx:id="submitButton" layoutX="121.0" layoutY="250.0" mnemonicParsing="false" onAction="#submitChanges" text="Submit Changes">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="updateStatus" layoutX="206.0" layoutY="250.0" text="Status" />
                     </children>
                 </AnchorPane>
             </content>
